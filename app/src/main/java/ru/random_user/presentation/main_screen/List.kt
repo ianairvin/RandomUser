@@ -43,45 +43,55 @@ fun ListUsers(
     navController: NavHostController,
     viewModel: VM
 ){
-    LazyColumn(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(padding),
-    ){
-        itemsIndexed(list.value){ i, item ->
-            Surface(
-                shape = RoundedCornerShape(16.dp),
-                color = colorScheme.inverseOnSurface,
-                modifier = Modifier.clickable {
-                    navController.navigate("user_screen") {
-                        popUpTo(navController.graph.startDestinationId) {
-                            saveState = true
+    if (!list.value.isEmpty()) {
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(padding),
+        ) {
+            itemsIndexed(list.value) { i, item ->
+                Surface(
+                    shape = RoundedCornerShape(16.dp),
+                    color = colorScheme.inverseOnSurface,
+                    modifier = Modifier.clickable {
+                        navController.navigate("user_screen") {
+                            popUpTo(navController.graph.startDestinationId) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
                         }
-                        launchSingleTop = true
-                        restoreState = true
+                        viewModel.pickUserId.value = item.id
+                        viewModel.getUser()
                     }
-                    viewModel.pickUserId.value = item.id
-                    viewModel.getUser()
-                }
-            ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth().padding(8.dp),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Avatar(item.picture, 100.dp)
-                    Column(
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.Start,
-                        modifier = Modifier.padding(16.dp).fillMaxWidth()
+                    Row(
+                        modifier = Modifier.fillMaxWidth().padding(8.dp),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text((i + 1).toString() + ") " + item.name)
-                        Text(item.address)
-                        Text("телефон: " + item.phone)
+                        Avatar(item.picture, 100.dp)
+                        Column(
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.Start,
+                            modifier = Modifier.padding(16.dp).fillMaxWidth()
+                        ) {
+                            Text((i + 1).toString() + ") " + item.name)
+                            Text(item.address)
+                            Text("телефон: " + item.phone)
+                        }
                     }
                 }
+                Spacer(modifier = Modifier.padding(8.dp))
             }
-            Spacer(modifier = Modifier.padding(8.dp))
+        }
+    } else {
+        Column(
+            Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ){
+            Text("Нет пользователей")
         }
     }
 }
