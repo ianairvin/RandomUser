@@ -3,7 +3,7 @@
 Тестовое задание
 
 <br />
-Приложение написано на языке программирования Kotlin с использованием Jetpack Compose, Clean Architecture и паттерн MVVM.
+Приложение написано на языке программирования Kotlin с использованием Jetpack Compose, Clean Architecture и паттерном MVVM.
 <br />
 Сторонние библиотеки:
 <br />
