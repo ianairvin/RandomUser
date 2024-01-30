@@ -20,16 +20,17 @@
 Расширенные данные о пользователе (по выделенным полям можно перейти в соответствующие приложения):
 <br />
 <br />
+  <img src="https://github.com/ianairvin/RandomUser/assets/80224528/75977620-d143-468f-8622-01649bad52ee" width="240x108">
+  <br />
+<br />
+<br />
+
+Ошибка о загрузке пользователей: 
+<br />
+<br />
   <img src="https://github.com/ianairvin/RandomUser/assets/80224528/2cf84c4a-b58d-4f14-9765-b9c5146d4c45" width="240x108">
   <br />
 <br />
 <br />
 
-Ошибка о загрузке пользователей:
-<br />
-<br />
-  <img src="https://github.com/ianairvin/RandomUser/assets/80224528/75977620-d143-468f-8622-01649bad52ee" width="240x108">
-  <br />
-<br />
-<br />
 
