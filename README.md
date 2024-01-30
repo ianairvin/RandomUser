@@ -76,3 +76,11 @@
   <br />
 <br />
 <br />
+
+Сообщение о пустом списке при отсутствии интернета (пункт №6):
+<br />
+<br />
+  <img src="https://github.com/ianairvin/RandomUser/assets/80224528/8eb2e623-346a-44c3-8298-db923bca25bd" width="240x108">
+  <br />
+<br />
+<br />
